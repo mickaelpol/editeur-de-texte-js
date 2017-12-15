@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Document</title>
@@ -20,65 +20,84 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-10 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2">
 
-                <input class="btn btn-sm btn-default" type="button" value="G" style="font-weight:bold;" onclick="commande('bold')" />
+                <div class="col-lg-8">
 
-                <input class="btn btn-sm btn-default" type="button" value="I" style="font-weight:italic;" onclick="commande('italic')" />
+                    <input class="btn btn-sm btn-default bold" type="button" value="G" style="font-weight:bold;" onclick="commande('bold')" />
+    
+                    <input class="btn btn-sm btn-default italic" type="button" value="I" onclick="commande('italic')" />
+    
+                    <input class="btn btn-sm btn-default underline" type="button" value="S" style="font-style:underline;" onclick="commande('underline')"/>
+    
+                    <input class="btn btn-sm btn-default" type="button" value="Lien" onclick="commande('createLink');" />
+    
+                    <input class="btn btn-sm btn-default" type="button" value="Désactiver le lien" onclick="commande('unlink');" />
+    
+                    <input class="btn btn-sm btn-default" type="button" value="Image" onclick="commande('insertImage');" />
 
-                <input class="btn btn-sm btn-default" type="button" value="S" style="font-weight:underline;" onclick="commande('underline')"
-                />
+                    <input class="btn btn-sm btn-default" type="button" value="-s-" onclick="commande('strikethrough');" />
+                    
+                    <input class="btn btn-sm btn-default" type="button" value="<-" onclick="commande('justifyleft');" />
+                    <input class="btn btn-sm btn-default" type="button" value="->" onclick="commande('justifyright');" />
+                    <input class="btn btn-sm btn-default" type="button" value="<-|->" onclick="commande('justifycenter');" />
+                    <input class="btn btn-sm btn-default" type="button" value="justify" onclick="commande('justifyfull');" />
 
-                <input class="btn btn-sm btn-default" type="button" value="Lien" onclick="commande('createLink');"/>
-                <input class="btn btn-sm btn-default" type="button" value="Désactiver le lien" onclick="commande('unlink');"/>
+                    <input class="btn btn-sm btn-default" type="button" value="puce" onclick="commande('insertunorderedlist');" />
+                    <input class="btn btn-sm btn-default" type="button" value="numéro" onclick="commande('insertorderedlist');" />
 
-                <input class="btn btn-sm btn-default" type="button" value="Image" onclick="commande('insertImage');"/>
+                    <input class="btn btn-sm btn-default" type="button" value="Page-header" onclick="commande('inserthorizontalrule');" />
 
-                <select onchange="commande('titre');">
+                    <input class="btn btn-sm btn-default" type="button" value="Paragraph" onclick="commande('insertParagraph');" />
+                    <input class="btn btn-sm btn-default" type="button" value="indenter" onclick="commande('indent');" />
 
-                    <option data-titre="h1">h1</option>
-                    <option data-titre="h2">h2</option>
-                    <option data-titre="h3">h3</option>
-                    <option data-titre="h4">h4</option>
-                    <option data-titre="h5">h5</option>
-                    <option data-titre="h6">h6</option>
-        
-                </select>
+    
+                    <select class="btn btn-sm btn-default">
+    
+                        <option data-titre="h1">h1</option>
+                        <option data-titre="h2">h2</option>
+                        <option data-titre="h3">h3</option>
+                        <option data-titre="h4">h4</option>
+                        <option data-titre="h5">h5</option>
+                        <option data-titre="h6">h6</option>
+    
+                    </select>
 
+                </div>
                 <!--<input type="button" value="couleur" onclick="commande('forecolor')">-->
+                <div class="col-lg-8">
+                    <div class="editeur form-control" id="editeur" contenteditable=""></div>
+                </div>
 
-                <div class="editeur" id="editeur" contenteditable=""></div>
+            </div>
+        </div>
+        <br>
+
+
+        <!-- Bloc du rendu du html tapé dans l'éditeur -->
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-10 col-lg-offset-2">
+
+                    <input id="boutonHtml" class="btn btn-success btn-sm" type="button" onclick="resultat();" value="Obtenir le html"> <br/>
+
+                    <textarea class="resultat form-control" id="rendu"></textarea>
+                    
+
+                </div>
 
             </div>
 
         </div>
-
-    </div> <br>
-
-
-    <!-- Bloc du rendu du html tapé dans l'éditeur -->
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-10 col-lg-offset-2">
-
-                <input class="btn btn-success btn-sm" type="button" onclick="resultat();" value="Obtenir le html"><br>
-                <br>
-
-                <textarea class="resultat" id="resultat"></textarea>
-
-            </div>
-
-        </div>
-
-    </div>
+        
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/app.js" type="text/javascript"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
 
 </body>
 

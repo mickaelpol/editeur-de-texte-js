@@ -7,3 +7,19 @@
     overflow: auto;
     
 }
+
+.bord {
+    border : 1px solid black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
