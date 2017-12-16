@@ -34,15 +34,15 @@
 
                 <input class="btn btn-sm btn-default" type="button" value="Image" onclick="commande('insertImage');"/>
 
-                <select onchange="commande('heading', this.value); this.selectedIndex = 0;">
-                    <option value="none">Titre</option>
-                    <option id="h1" value="h1">titre en h1</option>
-                    <option id="h2" value="h2">titre en h2</option>
-                    <option id="h3" value="h3">titre en h3</option>
-                    <option id="h4" value="h4">titre en h4</option>
-                    <option id="h5" value="h5">titre en h5</option>
-                    <option id="h6" value="h6">titre en h6</option>
-                    
+                <select onchange="commande('titre');">
+
+                    <option data-titre="h1">h1</option>
+                    <option data-titre="h2">h2</option>
+                    <option data-titre="h3">h3</option>
+                    <option data-titre="h4">h4</option>
+                    <option data-titre="h5">h5</option>
+                    <option data-titre="h6">h6</option>
+        
                 </select>
 
                 <!--<input type="button" value="couleur" onclick="commande('forecolor')">-->
@@ -75,13 +75,6 @@
 
     </div>
 
-    
-    <input type="submit" value="1">
-    <input type="submit" value="2">
-    <input type="submit" value="3">
-    
-    <input id="contenu" type="text"><br>
-    <div id="rendu"></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

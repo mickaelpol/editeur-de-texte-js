@@ -1,4 +1,18 @@
+//  Select des titre
+var title = {
+
+    h1: "<h1></h1>",
+    h2: "<h2></h2>",
+    h3: "<h3></h3>",
+    h4: "<h4></h4>",
+    h5: "<h5></h5>",
+    h6: "<h6></h6>"
+
+};
+
+
 // Fonction qui permet d'executer la commande demandé
+
 function commande(nom, argument) {
     
     if (typeof argument === 'undefined') {
@@ -6,6 +20,7 @@ function commande(nom, argument) {
         argument = '';
         
     }
+    
 
     switch (nom) {
         case 'createLink':
@@ -31,18 +46,18 @@ function resultat() {
     
 }
 
-$("input").click(function () {
+function titreChoisi() {
 
-    // console.log($(":input").val());
+    $('select').change(function () {
 
-    // var contenu = $('#contenu').val();
-    // var numero = $('button').val();
-    // var balise = "<" + numero + ">" + contenu + "</" + numero + ">";
-    // console.log(balise)
-    // var rendu = $('#rendu');
-    // rendu.html(balise);
+        var attr = $(this).find(':selected').data("titre");
+        var path = title[attr];
 
-})
+        $('#editeur').text(path);
 
+    });
 
+}
+
+titreChoisi();
 
