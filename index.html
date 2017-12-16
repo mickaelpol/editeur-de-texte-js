@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 class="text-center">Éditeur de texte</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-2">
+
+                <input class="btn btn-sm btn-default" type="button" value="G" style="font-weight:bold;" onclick="commande('bold')" />
+
+                <input class="btn btn-sm btn-default" type="button" value="I" style="font-weight:italic;" onclick="commande('italic')" />
+
+                <input class="btn btn-sm btn-default" type="button" value="S" style="font-weight:underline;" onclick="commande('underline')"
+                />
+
+                <input class="btn btn-sm btn-default" type="button" value="Lien" onclick="commande('createLink');"/>
+                <input class="btn btn-sm btn-default" type="button" value="Désactiver le lien" onclick="commande('unlink');"/>
+
+                <input class="btn btn-sm btn-default" type="button" value="Image" onclick="commande('insertImage');"/>
+
+                <select onchange="commande('heading', this.value); this.selectedIndex = 0;">
+                    <option value="none">Titre</option>
+                    <option id="h1" value="h1">titre en h1</option>
+                    <option id="h2" value="h2">titre en h2</option>
+                    <option id="h3" value="h3">titre en h3</option>
+                    <option id="h4" value="h4">titre en h4</option>
+                    <option id="h5" value="h5">titre en h5</option>
+                    <option id="h6" value="h6">titre en h6</option>
+                    
+                </select>
+
+                <!--<input type="button" value="couleur" onclick="commande('forecolor')">-->
+
+                <div class="editeur" id="editeur" contenteditable=""></div>
+
+            </div>
+
+        </div>
+
+    </div> <br>
+
+
+    <!-- Bloc du rendu du html tapé dans l'éditeur -->
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-2">
+
+                <input class="btn btn-success btn-sm" type="button" onclick="resultat();" value="Obtenir le html"><br>
+                <br>
+
+                <textarea class="resultat" id="resultat"></textarea>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <input type="submit" value="1">
+    <input type="submit" value="2">
+    <input type="submit" value="3">
+    
+    <input id="contenu" type="text"><br>
+    <div id="rendu"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+
+</body>
+
+</html>
